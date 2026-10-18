@@ -187,6 +187,17 @@ As imagens na pasta `evidencias/` mostram:
 - Google Colab (Python + BeautifulSoup)
 - Ngrok (para expor o Webhook local à internet)
 
+## Etapa Extra: IA Generativa (Google Gemini)
+
+Além do fluxo principal de automação (RPA + n8n), foi adicionada uma etapa extra de IA generativa para tornar a comunicação com o cliente mais natural e profissional.
+
+- A recomendação de investimento gerada pelo node `Code in JavaScript` é enviada para o Google Gemini (via node `Message a model` no n8n).
+- O Gemini reescreve a mensagem original em um tom mais simpático e consultivo, como se fosse um consultor de investimentos falando diretamente com o cliente.
+- O fluxo completo ficou assim: `Webhook → Code in JavaScript → Message a model (Gemini)`.
+- A resposta final do Webhook já retorna o texto reescrito pela IA, graças à configuração "When Last Node Finishes" no node de Webhook.
+
+### Evidências
+As evidências dessa etapa (prints da execução no n8n e da resposta recebida) estão na pasta `evidencias`.
 ---
 
 **Bons estudos e mãos à obra** 🚀
