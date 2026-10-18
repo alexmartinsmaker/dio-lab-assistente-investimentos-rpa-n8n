@@ -165,6 +165,28 @@ Conecte o Agente de IA do N8N a um modelo como Gemini ou GPT para:
 - [BeautifulSoup: Web Scraping com Python](https://realpython.com/beautiful-soup-web-scraper-python/)
 - [GitHub Pages: Guia Rápido](https://pages.github.com/)
 
+- ## Solução Implementada
+
+Este projeto foi desenvolvido como parte do desafio de criar um Assistente de Investimentos usando RPA e n8n.
+
+### Como funciona
+
+1. O script RPA (`src/extrair_clientes.ipynb`, executado no Google Colab) acessa a página de clientes fictícios e extrai os dados usando BeautifulSoup.
+2. Os dados extraídos são enviados via POST para um Webhook do n8n.
+3. O workflow do n8n (`n8n/workflow.json`) recebe os dados, identifica o perfil de investimento de cada cliente (Conservador, Moderado ou Arrojado) e gera uma mensagem personalizada com sugestões de investimento para cada perfil.
+
+### Evidências de funcionamento
+
+As imagens na pasta `evidencias/` mostram:
+- `code.png`: o código do node responsável por gerar as mensagens no n8n.
+- `workflow.png`: o workflow completo em execução, recebendo os dados via Webhook.
+
+### Tecnologias utilizadas
+
+- n8n (local, via Docker)
+- Google Colab (Python + BeautifulSoup)
+- Ngrok (para expor o Webhook local à internet)
+
 ---
 
 **Bons estudos e mãos à obra** 🚀
