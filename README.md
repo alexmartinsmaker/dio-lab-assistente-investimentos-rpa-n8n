@@ -191,6 +191,8 @@ As imagens na pasta `evidencias/` mostram:
 
 Além do fluxo principal de automação (RPA + n8n), foi adicionada uma etapa extra de IA generativa para tornar a comunicação com o cliente mais natural e profissional.
 
+O arquivo n8n/workflow.json contém o fluxo original do desafio (Webhook → Code in JavaScript), sem a etapa de IA. Já o arquivo n8n/workflowIA.json contém o fluxo completo com a etapa extra de IA generativa (Webhook → Code in JavaScript → Message a model), que reescreve a recomendação de investimentos em um tom natural e consultivo usando o Google Gemini.
+
 - A recomendação de investimento gerada pelo node `Code in JavaScript` é enviada para o Google Gemini (via node `Message a model` no n8n).
 - O Gemini reescreve a mensagem original em um tom mais simpático e consultivo, como se fosse um consultor de investimentos falando diretamente com o cliente.
 - O fluxo completo ficou assim: `Webhook → Code in JavaScript → Message a model (Gemini)`.
